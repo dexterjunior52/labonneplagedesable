@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int nombre;
+
+        while (true) {
+            try {
+                System.out.print("Veuillez saisir un nombre entre 1 et 3 : ");
+                nombre = scanner.nextInt();
+                if (nombre >= 1 && nombre <= 3) {
+                    System.out.println("Bravo, vous avez réussi ! Vous avez saisi le nombre " + nombre + ".");
+                    break;
+                } else {
+                    System.out.println("Le nombre saisi n'est pas compris entre 1 et 3. Réessayez.");
+                }
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Veuillez entrer un nombre valide (1, 2 ou 3).");
+                scanner.nextLine(); // Clear the input buffer
+            }
+        }
+    }
